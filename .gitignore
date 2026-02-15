@@ -32,7 +32,9 @@ credentials.json
 logs/
 *.log
 .tmp/
+.tmp/.gitkeep
 outputs/
+outputs/.gitkeep
 
 # Test / coverage
 .pytest_cache/
