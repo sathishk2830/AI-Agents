@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # Backend API Server
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8000
+      - ENVIRONMENT=development
+    volumes:
+      - ./backend:/app/backend
+    command: >
+      sh -c "cd backend && 
+             pip install -r requirements.txt &&
+             python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    depends_on:
+      - db
+
+  # Frontend React App
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/api
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on:
+      - backend
+    command: npm start
+
+  # SQLite Database (optional - included for reference)
+  db:
+    image: busybox
+    volumes:
+      - ./data:/data
+    command: >
+      sh -c "mkdir -p /data && echo 'Database directory ready'"
+
+volumes:
+  data:
+
+# To run:
+# docker-compose up
+#
+# Access:
+# Frontend: http://localhost:3000
+# Backend: http://localhost:8000
+# API Docs: http://localhost:8000/docs

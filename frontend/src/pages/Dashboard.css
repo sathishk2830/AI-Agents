@@ -1,0 +1,263 @@
+.dashboard-page {
+  padding: 2em;
+}
+
+.dashboard-page h2 {
+  color: white;
+  margin-bottom: 2em;
+  font-size: 2em;
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.panel {
+  background: white;
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.panel h3 {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  color: #333;
+  font-size: 1.3em;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.75em;
+}
+
+.input-group {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.75em;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn {
+  padding: 0.75em 1.5em;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+.issue-details {
+  background: #f9f9f9;
+  border-radius: 5px;
+  padding: 1.5em;
+  border-left: 4px solid #667eea;
+}
+
+.issue-details h4 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 1em;
+  flex-direction: column;
+}
+
+.detail-row .label {
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.25em;
+}
+
+.detail-row .value {
+  color: #333;
+  word-break: break-word;
+}
+
+.detail-row .description-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: white;
+  padding: 0.75em;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.badge-priority {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.35em 0.75em;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.generation-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75em;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.info-message {
+  background: rgba(102, 126, 234, 0.1);
+  border: 2px solid #667eea;
+  padding: 1.5em;
+  border-radius: 5px;
+  color: #667eea;
+  text-align: center;
+  font-weight: 500;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-panel {
+  grid-column: 1 / -1;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.btn-export {
+  flex: 1;
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 0.75em 1em;
+}
+
+.btn-export:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.content-preview {
+  background: #f9f9f9;
+  border-radius: 5px;
+  padding: 1.5em;
+  border-left: 4px solid #667eea;
+}
+
+.content-preview h4 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.content-preview pre {
+  background: white;
+  padding: 1em;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+  color: #333;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.status-bar {
+  position: fixed;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1em 2em;
+  border-radius: 50px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  text-align: center;
+  animation: slideUp 0.3s ease;
+  z-index: 1000;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .export-buttons {
+    flex-direction: column;
+  }
+
+  .btn-export {
+    width: 100%;
+  }
+}

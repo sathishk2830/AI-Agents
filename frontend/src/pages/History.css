@@ -1,0 +1,137 @@
+.history-page {
+  padding: 2em;
+}
+
+.history-page h2 {
+  color: white;
+  margin-bottom: 2em;
+  font-size: 2em;
+}
+
+.empty-state {
+  background: white;
+  border-radius: 10px;
+  padding: 4em 2em;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  color: #666;
+  font-size: 1.1em;
+}
+
+.history-controls {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 500px;
+  padding: 0.85em 1em;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 1em;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.result-count {
+  color: white;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5em 1em;
+  border-radius: 20px;
+}
+
+.history-list {
+  display: grid;
+  gap: 1.5em;
+}
+
+.history-item {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5em;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.history-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.item-header h4 {
+  margin: 0;
+  color: #667eea;
+  font-size: 1.1em;
+}
+
+.item-header p {
+  margin: 0.25em 0 0 0;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.provider-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.4em 0.8em;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.item-meta {
+  display: flex;
+  gap: 2em;
+  color: #999;
+  font-size: 0.9em;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1em;
+}
+
+.no-results {
+  background: white;
+  border-radius: 10px;
+  padding: 2em;
+  text-align: center;
+  color: #999;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .history-controls {
+    flex-direction: column;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .item-header {
+    flex-direction: column;
+  }
+
+  .item-meta {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
